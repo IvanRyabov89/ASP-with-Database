@@ -15,7 +15,7 @@ namespace ASP_с_бд
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSpaStaticFiles();
+            //services.AddSpaStaticFiles();
             services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
@@ -25,10 +25,7 @@ namespace ASP_с_бд
             app.UseMvc(
                 r =>
                 {
-                    r.MapRoute(
-                        name: "telephone",
-                        template: "{controller=Telephone}/{action=Index}"
-                        );
+                    r.MapRoute("default", "{controller=TelephoneDescription}/{action=AllView}");
                 }
                 );
         }
