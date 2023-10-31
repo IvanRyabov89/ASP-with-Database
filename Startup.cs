@@ -26,6 +26,7 @@ namespace ASP_с_бд
                 r =>
                 {
                     r.MapRoute("default", "{controller=TelephoneDescription}/{action=AllView}");
+                    //r.MapRoute("default", "{controller=telephone}/{action=Index}");
                 }
                 );
         }
