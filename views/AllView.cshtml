@@ -1,0 +1,67 @@
+﻿@using ASP_с_бд.Entities;
+@{ 
+    ViewData["Title"] = "AllView";
+} 
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Телефонный справочник </title>
+    <style type="text/css">
+        .bdn {
+            text-decoration: none;
+            position: relative;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 50px 0 50px;
+            margin: 0 20px;
+            background: linear-gradient(-135 deg,#005EFE,#4463FE);
+            border-width: 0;
+            border-radius: 50px;
+            font-size: 20px;
+            color: white;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+    <script src="~/js/scripts.js"></script>
+</head>
+<body>
+    <div style="align-content:center">
+        <table border="1">
+            <tr>
+                <td width="50">№</td>
+                <td width="150">Фамилия</td>
+                <td width="150">Имя</td>
+                <td width="150">Отчество</td>
+                <td width="150">Номер телефона</td>
+                <td width="300">Адрес</td>
+                <td width="250">Описание</td>
+            </tr>
+
+            @{
+                int number = 1;
+                foreach (TelephoneDescription telephone in ViewBag.TelephoneDescriptions)
+                {
+                    <tr>
+                        @*
+                        <td width="50">@telephone.ID</td>*@
+                        <td><input type="button" value=@number onclick="fullDescription(@number)" /></td>
+                        <td width="150">@telephone.LastName</td>
+                        <td width="150">@telephone.Name</td>
+                        <td width="150">@telephone.MiddleName</td>
+                        <td width="150">@telephone.NumberTelephone</td>
+                        <td width="300">@telephone.Adress</td>
+                        <td width="250">@telephone.Description</td>
+                    </tr>
+                    number++;
+                }
+            }
+        </table>
+        <br />
+        <a href="/TelephoneDescription/Add" class="btn">Добавить</a>
+        <a href="/TelephoneDescription/Delete" class="btn">Удалить</a>
+        <a href="/TelephoneDescription/Update" class="btn">Изменить</a>
+      
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Get Data</title>
+    <style type="text/css">
+        .brd {
+            border: 4px double black;
+            background: #e9e5e5;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="brd">
+        <h2>Редактирование пользователя</h2>
+        <form asp-action="edit" asp-controller="home" asp-route-id="@Model.Id">
+            <p>
+                <label asp-for="Name">Имя</label><br />
+                <input type="text" asp-for="Name" />
+            </p>
+            <p>
+                <label asp-for="Age">Возраст</label><br />
+                <input type="number" asp-for="Age" />
+            </p>
+            <p>
+                <input type="submit" value="Сохранить" />
+            </p>
+        </form>
+    </div>
+    <hr />
+</body>
+</html>
