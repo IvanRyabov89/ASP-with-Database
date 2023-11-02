@@ -30,6 +30,7 @@
         <table border="1">
             <tr>
                 <td width="50">№</td>
+                <td width="50">Идентификатор</td>
                 <td width="150">Фамилия</td>
                 <td width="150">Имя</td>
                 <td width="150">Отчество</td>
@@ -42,17 +43,18 @@
                 int number = 1;
                 foreach (TelephoneDescription telephone in ViewBag.TelephoneDescriptions)
                 {
-                    <tr>
-                        @*
-                        <td width="50">@telephone.ID</td>*@
-                        <td><input type="button" value=@number onclick="fullDescription(@number)" /></td>
-                        <td width="150">@telephone.LastName</td>
-                        <td width="150">@telephone.Name</td>
-                        <td width="150">@telephone.MiddleName</td>
-                        <td width="150">@telephone.NumberTelephone</td>
-                        <td width="300">@telephone.Adress</td>
-                        <td width="250">@telephone.Description</td>
-                    </tr>
+                        <tr>
+
+
+                            <td><input type="button" value=@number onclick="fullDescription(@number)" /></td>
+                            <td width="50">@telephone.ID</td>
+                            <td width="150">@telephone.LastName</td>
+                            <td width="150">@telephone.Name</td>
+                            <td width="150">@telephone.MiddleName</td>
+                            <td width="150">@telephone.NumberTelephone</td>
+                            <td width="300">@telephone.Adress</td>
+                            <td width="250">@telephone.Description</td>
+                        </tr>
                     number++;
                 }
             }
@@ -60,7 +62,7 @@
         <br />
         <a href="/TelephoneDescription/Add" class="btn">Добавить</a>
         <a href="/TelephoneDescription/Delete" class="btn">Удалить</a>
-        <a href="/TelephoneDescription/Update" class="btn">Изменить</a>
+        <a href="/TelephoneDescription/EditIndification" class="btn">Изменить</a>
       
     </div>
 </body>
