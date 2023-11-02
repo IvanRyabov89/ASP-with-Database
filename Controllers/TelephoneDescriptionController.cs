@@ -28,7 +28,7 @@ namespace ASP_с_бд.Controllers
         {
             return View();
         }
-        public IActionResult Update()
+        public IActionResult EditIndification()
         {
             return View();
         }
@@ -49,7 +49,7 @@ namespace ASP_с_бд.Controllers
             var db = new DataContext();
             db.telephoneDescriptions.Update(telephoneDescriptions);
             await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("AllView");
         }
         [HttpPost]
         public async Task<IActionResult> DeleteOne(int? id)
@@ -69,13 +69,14 @@ namespace ASP_с_бд.Controllers
         }
 
         [HttpPost]
-        public IActionResult GetDataFromViewField(string lastName,string name,string middleName,string numberTelephone,string adress,string description)
+        public IActionResult GetDataFromViewField( string lastName,string name,string middleName,string numberTelephone,string adress,string description)
         {
             using(var db=new DataContext())
             {
                 db.telephoneDescriptions.Add(
                     new TelephoneDescription()
                     {
+                       
                         LastName = lastName,
                         Name = name,
                         MiddleName = middleName,
