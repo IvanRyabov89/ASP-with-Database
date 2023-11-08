@@ -38,8 +38,8 @@ namespace ASP_с_бд.Controllers
             var db = new DataContext();
             if (id != null)
             {
-                TelephoneDescription? user = await db.telephoneDescriptions.FirstOrDefaultAsync(p => p.ID == id);
-                if (user != null) return View(user);
+                TelephoneDescription? telephoneDescriptions = await db.telephoneDescriptions.FirstOrDefaultAsync(p => p.ID == id);
+                if (telephoneDescriptions != null) return View(telephoneDescriptions);
             }
             return NotFound();
         }
@@ -51,6 +51,7 @@ namespace ASP_с_бд.Controllers
             await db.SaveChangesAsync();
             return RedirectToAction("AllView");
         }
+
         [HttpPost]
         public async Task<IActionResult> DeleteOne(int? id)
         {
@@ -67,6 +68,8 @@ namespace ASP_с_бд.Controllers
             }
             return NotFound();
         }
+
+
 
         [HttpPost]
         public IActionResult GetDataFromViewField( string lastName,string name,string middleName,string numberTelephone,string adress,string description)
