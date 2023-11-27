@@ -1,0 +1,34 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Get Data</title>
+    <style type="text/css">
+        .brd{
+            border: 4px double black;
+            background:#e9e5e5;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="brd">
+        <h2>Добавление записи</h2>
+        <form action="~/TelephoneDescription/GetDataFromViewField" method="post">
+          
+            <label>Фамилия</label><br />
+            <input type="text" name="lastName" value="Федоров" size="35" /><br />
+            <label>Имя</label><br />
+            <input type="text" name="name" value="Василий" size="35" /><br />
+            <label>Отчество</label><br />
+            <input type="text" name="middleName" value="Сергеевич" size="35" /><br />
+            <label>Номер телефона</label><br />
+            <input type="text" name="numberTelephone" value="89953458143" size="35" /><br />
+            <label>Адрес</label><br />
+            <input type="text" name="adress" value="г.Новосибирск ул.Циолковского д.4 кв.90" size="35" /><br />
+            <label>Примечание</label><br />
+            <input type="text" name="description" value="1 Федоров Василий Сергеевич" size="35" /><br />
+            <p><input type="submit" value="Добавить" /></p>
+        </form>
+    </div>
+    <hr />
+</body>
+</html>
