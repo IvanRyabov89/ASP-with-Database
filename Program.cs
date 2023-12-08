@@ -19,7 +19,7 @@ namespace ASP_с_бд
         {
             //CreateHostBuilder(args).Build().Run();
             var init = BuildWebHost(args);
-            using(var scope =init.Services.CreateScope())
+            using (var scope = init.Services.CreateScope())
             {
                 var s = scope.ServiceProvider;
                 var c = s.GetRequiredService<DataContext>();
