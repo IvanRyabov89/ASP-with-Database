@@ -27,9 +27,9 @@ namespace ASP_с_бд.Data
                     context.telephoneDescriptions.Add(section);
                 }
               
-                context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT [dbo].[telephoneDescriptions] ON");
+                context.Database.ExecuteSqlRaw("SET IDENTITY_INSERT [dbo].[telephoneDescriptions] ON");
                 context.SaveChanges();
-                context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT [dbo].[telephoneDescriptions] OFF");
+                context.Database.ExecuteSqlRaw("SET IDENTITY_INSERT [dbo].[telephoneDescriptions] OFF");
                 trans.Commit();
             }
         }
